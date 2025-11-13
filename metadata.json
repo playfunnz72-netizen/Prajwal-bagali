@@ -1,0 +1,5 @@
+{
+  "name": "YouTube Clone",
+  "description": "A visually faithful clone of the YouTube web interface, showcasing a familiar layout with a header, sidebar, and a grid of video thumbnails. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
