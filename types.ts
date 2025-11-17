@@ -1,5 +1,4 @@
 
-// Fix: Import React to resolve the 'React' namespace for React.ReactNode.
 import React from 'react';
 
 export interface Video {
@@ -12,6 +11,8 @@ export interface Video {
   uploadedAt: string;
   duration: string;
   description: string;
+  isShort?: boolean;
+  videoUrl: string;
 }
 
 export interface NavItem {
@@ -32,4 +33,18 @@ export interface Comment {
     text: string;
     likes: string;
     timestamp: string;
+}
+
+export interface Playlist {
+  id: string;
+  name: string;
+  videoIds: string[];
+}
+
+export interface Notification {
+  id: string;
+  text: string;
+  timestamp: string;
+  videoId: string;
+  channelImageUrl: string;
 }

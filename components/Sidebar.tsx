@@ -25,7 +25,7 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ item, isSelected, onClick }) => (
-    <a href="#" onClick={(e) => { e.preventDefault(); onClick(); }} className={`flex items-center space-x-6 px-3 py-2.5 rounded-lg hover:bg-zinc-700 ${isSelected ? 'bg-zinc-700 font-bold' : ''}`}>
+    <a href="#" onClick={(e) => { e.preventDefault(); onClick(); }} className={`flex items-center space-x-6 px-3 py-2.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-700 ${isSelected ? 'bg-zinc-200 dark:bg-zinc-700 font-bold' : ''}`}>
         {item.icon}
         <span className="text-sm">{item.label}</span>
     </a>
@@ -38,7 +38,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ activeItem, onItemClick }) => {
   return (
-    <aside className="fixed top-14 left-0 h-[calc(100vh-56px)] w-60 bg-zinc-900 text-white p-3 space-y-2 hidden sm:block overflow-y-auto">
+    <aside className="fixed top-14 left-0 h-[calc(100vh-56px)] w-60 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white p-3 space-y-2 hidden sm:block overflow-y-auto border-r border-zinc-200 dark:border-zinc-800">
         <nav className="space-y-1">
             {mainNavItems.map((item) => (
                 <NavLink 
@@ -49,10 +49,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onItemClick }) => {
                 />
             ))}
         </nav>
-        <hr className="border-zinc-700 my-3" />
+        <hr className="border-zinc-200 dark:border-zinc-700 my-3" />
         <a href="#" 
            onClick={(e) => { e.preventDefault(); onItemClick('Your Channel'); }}
-           className={`flex items-center p-2 rounded-lg hover:bg-zinc-700 transition-colors ${activeItem === 'Your Channel' ? 'bg-zinc-700' : ''}`}>
+           className={`flex items-center p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors ${activeItem === 'Your Channel' ? 'bg-zinc-200 dark:bg-zinc-700' : ''}`}>
             <div className="flex-1 flex items-center space-x-3">
                  <img 
                     src={currentUser.avatarUrl} 
@@ -61,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onItemClick }) => {
                 />
                  <div className="overflow-hidden">
                     <h2 className="text-base font-semibold truncate">{currentUser.name}</h2>
-                    <p className="text-xs text-zinc-400 truncate">{currentUser.handle}</p>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400 truncate">{currentUser.handle}</p>
                  </div>
             </div>
             <ChevronRightIcon />

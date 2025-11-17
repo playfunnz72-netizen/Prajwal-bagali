@@ -1,5 +1,7 @@
 {
-  "name": "YouTube Clone",
-  "description": "A visually faithful clone of the YouTube web interface, showcasing a familiar layout with a header, sidebar, and a grid of video thumbnails. Built with React, TypeScript, and Tailwind CSS.",
-  "requestFramePermissions": []
+  "name": " FunsTube",
+  "description": "A video sharing platform called FunsTube, showcasing a familiar layout with a header, sidebar, and a grid of video thumbnails. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": [
+    "camera"
+  ]
 }

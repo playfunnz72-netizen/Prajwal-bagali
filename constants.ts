@@ -1,5 +1,5 @@
 
-import { Video, UserProfile, Comment } from './types';
+import { Video, UserProfile, Comment, Playlist, Notification } from './types';
 
 export const currentUser: UserProfile = {
   name: 'John Doe',
@@ -11,39 +11,64 @@ export const videos: Video[] = [
   {
     id: '1',
     thumbnailUrl: 'https://picsum.photos/seed/a/684/384',
-    channelImageUrl: 'https://picsum.photos/seed/user-a/48/48',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    channelImageUrl: 'https://picsum.photos/seed/profile-pic/48/48',
     title: 'React Hooks in 10 Minutes | Complete Crash Course',
-    channelName: 'DevSimplified',
+    channelName: 'John Doe',
     views: '1.2M views',
     uploadedAt: '1 year ago',
     duration: '10:32',
-    description: 'A quick and complete crash course on React Hooks. We will cover useState, useEffect, useContext, and creating custom hooks from scratch. Perfect for beginners and those needing a refresher.'
+    description: `A quick and complete crash course on React Hooks. 
+
+Chapters:
+0:00 - Intro
+1:15 - The useState Hook
+4:30 - The useEffect Hook
+7:05 - The useContext Hook
+9:10 - Custom Hooks
+
+Perfect for beginners and those needing a refresher.
+
+[00:03] Welcome to this quick crash course on React Hooks.
+[00:07] We'll cover the most important hooks you need to know to get started with modern React.
+[00:12] Let's begin with the useState hook, which lets you add state to function components.
+[00:18] It's the most common hook you'll use.`
   },
   {
     id: '2',
     thumbnailUrl: 'https://picsum.photos/seed/b/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-b/48/48',
     title: 'Building a Full-Stack App with Next.js 14',
     channelName: 'Traversy Media',
     views: '876K views',
     uploadedAt: '3 months ago',
     duration: '2:15:45',
-    description: "In this comprehensive tutorial, we'll build a full-stack application from start to finish using the latest features in Next.js 14, including server actions, app router, and more. We'll use Prisma for the database and Tailwind CSS for styling."
+    description: `In this comprehensive tutorial, we'll build a full-stack application from start to finish using the latest features in Next.js 14, including server actions, app router, and more. We'll use Prisma for the database and Tailwind CSS for styling.
+
+Chapters:
+0:00 - Introduction
+15:30 - Project Setup
+1:05:10 - Building the API
+2:00:00 - Frontend Development`
   },
   {
     id: '3',
-    thumbnailUrl: 'https://picsum.photos/seed/c/684/384',
+    thumbnailUrl: 'https://picsum.photos/seed/c/384/684',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-c/48/48',
     title: 'UI/UX Design Trends in 2024 You NEED to Know',
     channelName: 'Fireship',
     views: '2.5M views',
     uploadedAt: '6 months ago',
-    duration: '08:12',
-    description: "Discover the hottest UI/UX design trends for 2024. From bento grids and glassmorphism to AI-powered design tools, we're breaking down what's in, what's out, and what's next in the world of digital design."
+    duration: '00:58',
+    description: "Discover the hottest UI/UX design trends for 2024. From bento grids and glassmorphism to AI-powered design tools, we're breaking down what's in, what's out, and what's next in the world of digital design.",
+    isShort: true,
   },
   {
     id: '4',
     thumbnailUrl: 'https://picsum.photos/seed/d/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-d/48/48',
     title: 'Lo-fi Hip Hop Radio - Beats to Relax/Study to',
     channelName: 'Lofi Girl',
@@ -55,6 +80,7 @@ export const videos: Video[] = [
   {
     id: '5',
     thumbnailUrl: 'https://picsum.photos/seed/e/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-e/48/48',
     title: 'The Ultimate Tailwind CSS Tutorial',
     channelName: 'Net Ninja',
@@ -66,6 +92,7 @@ export const videos: Video[] = [
   {
     id: '6',
     thumbnailUrl: 'https://picsum.photos/seed/f/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-f/48/48',
     title: 'I Cooked a Gordon Ramsay Steak for 100 Hours',
     channelName: 'MrBeast',
@@ -77,6 +104,7 @@ export const videos: Video[] = [
   {
     id: '7',
     thumbnailUrl: 'https://picsum.photos/seed/g/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-g/48/48',
     title: 'The insane math behind quantum computers',
     channelName: 'Veritasium',
@@ -88,6 +116,7 @@ export const videos: Video[] = [
   {
     id: '8',
     thumbnailUrl: 'https://picsum.photos/seed/h/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-h/48/48',
     title: 'My Desk Setup Tour 2024!',
     channelName: 'MKBHD',
@@ -98,18 +127,21 @@ export const videos: Video[] = [
   },
   {
     id: '9',
-    thumbnailUrl: 'https://picsum.photos/seed/i/684/384',
+    thumbnailUrl: 'https://picsum.photos/seed/i/384/684',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-i/48/48',
     title: 'JavaScript Pro Tips - Code This, Not That',
     channelName: 'Fireship',
     views: '1.8M views',
     uploadedAt: '9 months ago',
-    duration: '11:42',
-    description: 'Level up your JavaScript skills with these pro tips. We compare common patterns with more efficient, modern alternatives. Learn about optional chaining, nullish coalescing, and other ES2020+ features.'
+    duration: '00:45',
+    description: 'Level up your JavaScript skills with these pro tips. We compare common patterns with more efficient, modern alternatives. Learn about optional chaining, nullish coalescing, and other ES2020+ features.',
+    isShort: true,
   },
   {
     id: '10',
     thumbnailUrl: 'https://picsum.photos/seed/j/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-j/48/48',
     title: 'Why The James Webb Telescope is a HUGE Deal',
     channelName: 'Kurzgesagt – In a Nutshell',
@@ -121,6 +153,7 @@ export const videos: Video[] = [
    {
     id: '11',
     thumbnailUrl: 'https://picsum.photos/seed/k/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-k/48/48',
     title: 'The Art of Code Refactoring',
     channelName: 'freeCodeCamp.org',
@@ -132,6 +165,7 @@ export const videos: Video[] = [
   {
     id: '12',
     thumbnailUrl: 'https://picsum.photos/seed/l/684/384',
+    videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
     channelImageUrl: 'https://picsum.photos/seed/user-l/48/48',
     title: 'Building a PC for the First Time...',
     channelName: 'Linus Tech Tips',
@@ -183,4 +217,53 @@ export const comments: Comment[] = [
         likes: '189',
         timestamp: '2 weeks ago'
     }
+];
+
+export const playlists: Playlist[] = [
+  {
+    id: 'pl1',
+    name: 'Watch Later',
+    videoIds: ['2', '5'],
+  },
+  {
+    id: 'pl2',
+    name: 'React Tutorials',
+    videoIds: ['1'],
+  },
+  {
+    id: 'pl3',
+    name: 'Favorites',
+    videoIds: [],
+  }
+];
+
+export const notifications: Notification[] = [
+  {
+    id: 'n1',
+    text: 'Traversy Media uploaded: Building a Full-Stack App with Next.js 14',
+    timestamp: '2 hours ago',
+    videoId: '2',
+    channelImageUrl: 'https://picsum.photos/seed/user-b/48/48',
+  },
+  {
+    id: 'n2',
+    text: 'Fireship uploaded a new Short: UI/UX Design Trends in 2024',
+    timestamp: '1 day ago',
+    videoId: '3',
+    channelImageUrl: 'https://picsum.photos/seed/user-c/48/48',
+  },
+  {
+    id: 'n3',
+    text: 'MKBHD uploaded: My Desk Setup Tour 2024!',
+    timestamp: '3 days ago',
+    videoId: '8',
+    channelImageUrl: 'https://picsum.photos/seed/user-h/48/48',
+  },
+  {
+    id: 'n4',
+    text: 'Lofi Girl is now LIVE',
+    timestamp: '1 week ago',
+    videoId: '4',
+    channelImageUrl: 'https://picsum.photos/seed/user-d/48/48',
+  }
 ];
